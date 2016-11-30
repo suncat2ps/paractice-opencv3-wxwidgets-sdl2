@@ -1,15 +1,9 @@
-//
-//  sdlframe.hpp
-//  blackbox
-//
-//  Created by 장성각 on 2016. 11. 24..
-//  Copyright © 2016년 장성각. All rights reserved.
-//
-
 #include "wx/wx.h"
 #include "wx/splitter.h"
 #include "SDL2/SDL.h"
 #include "sdlwindow.hpp"
+#include "controlpanel.hpp"
+#include "imagepanel.hpp"
 
 class SDL_Frame : public wxFrame
 {
@@ -17,6 +11,8 @@ public:
     wxSDLWindow *sdl_window = nullptr;
     SDL_Renderer *renderer = nullptr;
     wxString *title;
+    wxImagePanel *drawPanel = nullptr;
+    wxControlPanel *ctrlPanel = nullptr;
     
     SDL_Frame(const wxString& title);
     void OnIdle(wxIdleEvent &);

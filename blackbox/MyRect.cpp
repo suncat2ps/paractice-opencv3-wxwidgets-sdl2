@@ -1,11 +1,3 @@
-//
-//  MyRect.cpp
-//  blackbox
-//
-//  Created by 장성각 on 2016. 11. 30..
-//  Copyright © 2016년 장성각. All rights reserved.
-//
-
 #include "MyRect.hpp"
 
 MyRect::MyRect(SDL_Renderer *_renderer, int x, int y, int height, int width)

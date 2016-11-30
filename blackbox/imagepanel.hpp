@@ -1,10 +1,3 @@
-//
-//  imagepanel.hpp
-//  blackbox
-//
-//  Created by 장성각 on 2016. 11. 23..
-//  Copyright © 2016년 장성각. All rights reserved.
-//
 #include "wx/wx.h"
 #include "opencv2/core/core.hpp"
 #include "opencv2/highgui/highgui.hpp"

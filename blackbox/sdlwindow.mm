@@ -1,11 +1,3 @@
-//
-//  sdlwindow.cpp
-//  blackbox
-//
-//  Created by 장성각 on 2016. 11. 28..
-//  Copyright © 2016년 장성각. All rights reserved.
-//
-
 #include "sdlwindow.hpp"
 
 BEGIN_EVENT_TABLE(wxSDLWindow, wxWindow)
@@ -18,34 +10,14 @@ wxSDLWindow::wxSDLWindow(wxWindow* parent, wxSize const& size)
 : wxWindow(parent, wxID_ANY, wxDefaultPosition, size)
 ,timer(this, SDL_WINDOW_TIMER_ID)
 {
-    
-    //NSView *ns_view = (NSView *) GetHandle();
-    //window = SDL_CreateWindowFrom((__bridge void *) GetHandle());
-    
-    //window = SDL_CreateWindowFrom((void *) this);
-    //wxNativeWindow* native_window = new wxNativeWindow(parent, wxID_ANY, (wxNativeWindowHandle*)window);
-    //NSView *ns_view = (NSView *) GetHandle();
-    //NSWindow *ns_window = [ns_view window];
-    
-    //window = SDL_CreateWindowFrom((__bridge void *) ns_window);
-    //window = SDL_CreateWindowFrom((__bridge void *) GetHandle());
-    
     //SetBackgroundColour(wxColour(_T("rgba(255,255,255,0.5)")));
     
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL Initialisation Error\n\n";
+        return;
     }
     
-    window = SDL_CreateWindow(
-                              "An SDL2 window",                  // window title
-                              SDL_WINDOWPOS_CENTERED,           // initial x position
-                              SDL_WINDOWPOS_CENTERED,           // initial y position
-                              800,                               // width, in pixels
-                              600,                               // height, in pixels
-                              SDL_WINDOW_OPENGL                                                      );
-    // flags - see below
-
-    //window = SDL_CreateWindowFrom((__bridge void *)GetNSWindowFromNSView((NSView *)GetHandle()));
+    window = SDL_CreateWindowFrom((__bridge void *)GetNSWindowFromNSView((NSView *)GetHandle()));
     
     wxPuts(_T("Start"));
     
@@ -59,41 +31,12 @@ wxSDLWindow::wxSDLWindow(wxWindow* parent, wxSize const& size)
 }
 
 void wxSDLWindow::OnIdle(wxIdleEvent &) {
-    // create the SDL_Surface
-//    CreateSurface();
-//
-//    Lock();
-    
-// Ask SDL for the time in milliseconds
-//    int tick = SDL_GetTicks();
-    
-//    for (int y = 0; y < 600; y++) {
-//        for (int x = 0; x < 800; x++) {
-//            wxUint32 color = (y * y) + (x * x) + tick;
-//            wxUint8 *pixels = static_cast<wxUint8 *>(surface->pixels) +
-//            (y * surface->pitch) +
-//            (x * surface->format->BytesPerPixel);
-//            
-//#if SDL_BYTEORDER == SDL_BIG_ENDIAN
-//            pixels[0] = color & 0xFF;
-//            pixels[1] = (color >> 8) & 0xFF;
-//            pixels[2] = (color >> 16) & 0xFF;
-//#else
-//            pixels[0] = (color >> 16) & 0xFF;
-//            pixels[1] = (color >> 8) & 0xFF;
-//            pixels[2] = color & 0xFF;
-//#endif
-//        }
-//    }
-    
-//    SDL_RenderReadPixels(renderer, NULL, SDL_PIXELFORMAT_RGB24, surface->pixels, surface->pitch);
-//    
-//    Unlock();
-//
-//    
-//    Refresh(false);
-//
-//    wxMilliSleep(33);
+    CreateSurface();
+    Lock();
+    SDL_RenderReadPixels(renderer, NULL, SDL_PIXELFORMAT_RGB24, surface->pixels, surface->pitch);
+    Unlock();
+    Refresh(false);
+    wxMilliSleep(33);
 }
 
 void wxSDLWindow::CreateSurface() {
@@ -133,19 +76,14 @@ void wxSDLWindow::Unlock()
 
 void wxSDLWindow::OnPaint(wxPaintEvent& event)
 {
-// can't draw if the surface doesn't exist yet
-//    if (surface == NULL) {
-//        return;
-//    }
-//    
-//    Lock();
-//    
-//    wxBitmap bmp(wxImage(surface->w, surface->h,
-//                        static_cast<unsigned char *>(surface->pixels), true));
-//
-//    Unlock();
-//    
-//    wxBufferedPaintDC dc(this, bmp);
+    if (surface == NULL) {
+        return;
+    }
+    Lock();
+    wxBitmap bmp(wxImage(surface->w, surface->h,
+                        static_cast<unsigned char *>(surface->pixels), true));
+    Unlock();
+    wxBufferedPaintDC dc(this, bmp);
 }
 
 void wxSDLWindow::OnTimer(wxTimerEvent&) {
@@ -164,7 +102,7 @@ void wxSDLWindow::OnTimer(wxTimerEvent&) {
 
                 switch(event.key.keysym.sym) {
                     case SDLK_DOWN:
-                        myRect->SetPositionY(myRect->r.y + 1);
+                        myRect->SetPositionY(myRect->r.y + 15);
                         break;
                 }
                 break;
@@ -172,14 +110,6 @@ void wxSDLWindow::OnTimer(wxTimerEvent&) {
     }
     
     myRect->render();
-    
-//    SDL_Rect r;
-//    r.x = 150;
-//    r.y = 150;
-//    r.w = 150;
-//    r.h = 150;
-//    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-//    SDL_RenderFillRect( renderer, &r );
     
     SDL_RenderPresent(renderer);
 }
@@ -191,5 +121,4 @@ void wxSDLWindow::Close()
         SDL_DestroyWindow(window);
         SDL_Quit();
     }
-    //Destroy();
 }

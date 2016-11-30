@@ -1,11 +1,3 @@
-//
-//  sdlframe.cpp
-//  blackbox
-//
-//  Created by 장성각 on 2016. 11. 24..
-//  Copyright © 2016년 장성각. All rights reserved.
-//
-
 #include "sdlframe.hpp"
 
 BEGIN_EVENT_TABLE(SDL_Frame, wxFrame)
@@ -21,23 +13,13 @@ SDL_Frame::SDL_Frame(const wxString& title) : wxFrame(NULL, wxID_ANY, title)
     
     sdl_window = new wxSDLWindow(splitter, wxSize(800, 600));
     
-    wxPanel* panel = new wxPanel(splitter);
+    wxPanel *panel = new wxPanel(splitter);
     panel->Show();
-    
-    
-//
-//    SDL_CreateWindowFrom((__bridge void *)GetNSWindowFromNSView((NSView *)GetHandle()));
-#if wxUSE_STATUSBAR
-    // create a status bar just for fun (by default with 1 pane only)
-//    CreateStatusBar(1);
-//    SetStatusText(_T("SDL Window Init"));
-#endif
-    
-    
-//    wxColour col1;
-//    col1.Set(wxT("rgba(255, 255, 255, 0.8)"));
-//    
-//    SetBackgroundColour(col1);
+         
+    CreateStatusBar(1);
+    SetStatusText(_T("Application Init"));
+
+    splitter->SplitHorizontally(sdl_window, panel, 600);
 }
 
 void SDL_Frame::OnIdle(wxIdleEvent &)

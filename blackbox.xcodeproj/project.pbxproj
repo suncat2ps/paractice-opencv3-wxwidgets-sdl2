@@ -364,7 +364,7 @@
 					"-framework",
 					AVKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.meterm.blackbox;
+				PRODUCT_BUNDLE_IDENTIFIER = org.meterm.app.blackbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(WXROOT)/build/osx/setup/cocoa/include $(WXROOT)/include /usr/local/opt/opencv3/include /usr/local/include";
 				WXROOT = "/Users/suncat/Downloads/wxWidgets-3.1.0";
@@ -414,7 +414,7 @@
 					"-framework",
 					AVKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.meterm.blackbox;
+				PRODUCT_BUNDLE_IDENTIFIER = org.meterm.app.blackbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(WXROOT)/build/osx/setup/cocoa/include $(WXROOT)/include /usr/local/opt/opencv3/include /usr/local/include";
 				WXROOT = "/Users/suncat/Downloads/wxWidgets-3.1.0";
