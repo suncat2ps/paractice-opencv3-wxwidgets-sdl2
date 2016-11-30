@@ -1,13 +1,10 @@
 #include "wx/wx.h"
-#include "wx/nativewin.h"
 #include "wx/dcbuffer.h"
 #include "SDL2/SDL.h"
-#include "SDL2/SDL_syswm.h"
 #include "MyRect.hpp"
-
 #include "ObjectiveCInterface.h"
-
-
+#include "opencv2/highgui.hpp"
+using namespace cv;
 class wxSDLWindow : public wxWindow
 {
 public:
@@ -16,6 +13,9 @@ public:
     unsigned int *m_buffer;
     MyRect *myRect;
     SDL_Event event;
+    VideoCapture cap;
+    Mat frame;
+
 
 
     wxSDLWindow(wxWindow* parent, wxSize const& size);
@@ -31,6 +31,7 @@ private:
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
     SDL_Surface *surface = nullptr;
+    SDL_Texture *texture = nullptr;
     
 protected:
     wxDECLARE_EVENT_TABLE();

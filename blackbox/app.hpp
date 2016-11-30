@@ -5,6 +5,7 @@
 #include "controlpanel.hpp"
 #include "sdlframe.hpp"
 #include "ObjectiveCInterface.h"
+#include "imagepanel.hpp"
 
 class MyApp : public wxApp
 {

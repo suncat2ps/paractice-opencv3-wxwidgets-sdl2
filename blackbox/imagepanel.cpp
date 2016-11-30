@@ -1,10 +1,8 @@
 #include "imagepanel.hpp"
 
 BEGIN_EVENT_TABLE(wxImagePanel, wxPanel)
-// catch paint events
-EVT_PAINT(wxImagePanel::paintEvent)
-
-EVT_TIMER(TIMER_ID, wxImagePanel::OnTimer)
+    EVT_PAINT(wxImagePanel::paintEvent)
+    EVT_TIMER(TIMER_ID, wxImagePanel::OnTimer)
 END_EVENT_TABLE()
 
 

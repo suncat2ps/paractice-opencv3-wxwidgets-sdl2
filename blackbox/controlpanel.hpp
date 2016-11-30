@@ -14,8 +14,6 @@ class wxControlPanel : public wxPanel
     
     wxTextCtrl *inputFilePath;
     
-    
-    
 public:
     wxControlPanel(wxFrame* parent);
     void OnOpen(wxCommandEvent& event);

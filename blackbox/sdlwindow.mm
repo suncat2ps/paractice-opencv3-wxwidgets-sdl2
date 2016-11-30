@@ -6,12 +6,33 @@ BEGIN_EVENT_TABLE(wxSDLWindow, wxWindow)
     EVT_IDLE(wxSDLWindow::OnIdle)
 END_EVENT_TABLE()
 
+void fillTexture(SDL_Texture * texture, Mat mat)
+{
+    IplImage * img = new IplImage(mat);
+    
+    unsigned char * texture_data = NULL;
+    int texture_pitch = 0;
+    
+    SDL_LockTexture(texture, 0, (void **)&texture_data, &texture_pitch);
+    memcpy(texture_data, (void *)img->imageData, img->width * img->height * img->nChannels);
+    SDL_UnlockTexture(texture);
+}
+
 wxSDLWindow::wxSDLWindow(wxWindow* parent, wxSize const& size)
 : wxWindow(parent, wxID_ANY, wxDefaultPosition, size)
 ,timer(this, SDL_WINDOW_TIMER_ID)
 {
     //SetBackgroundColour(wxColour(_T("rgba(255,255,255,0.5)")));
     
+    cap.open(0);
+    
+    if (!cap.isOpened())
+    {
+        std::cerr << "***Could not initialize capturing...***" << std::endl;
+        return;
+    }
+
+
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL Initialisation Error\n\n";
         return;
@@ -24,6 +45,14 @@ wxSDLWindow::wxSDLWindow(wxWindow* parent, wxSize const& size)
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
 
     assert(window && renderer);
+    
+    texture = SDL_CreateTexture(
+                                renderer,
+                                SDL_PIXELFORMAT_BGR24,
+                                SDL_TEXTUREACCESS_STREAMING,
+                                (int)cap.get(cv::CAP_PROP_FRAME_WIDTH),
+                                (int)cap.get(cv::CAP_PROP_FRAME_HEIGHT)
+                                );
     
     myRect = new MyRect(renderer, 0, 0, 100, 100);
     
@@ -47,7 +76,7 @@ void wxSDLWindow::CreateSurface() {
         surface = SDL_CreateRGBSurface(0,
                                        _width, _height, 24, 0, 0, 0, 0);
     }
-    // Size has changed - nuke and redo.
+
     else if( surface->w != _width || surface->h != _height )
     {
         SDL_FreeSurface( surface );
@@ -87,7 +116,6 @@ void wxSDLWindow::OnPaint(wxPaintEvent& event)
 }
 
 void wxSDLWindow::OnTimer(wxTimerEvent&) {
-    
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     
@@ -109,6 +137,17 @@ void wxSDLWindow::OnTimer(wxTimerEvent&) {
         }
     }
     
+    cap >> frame;
+    
+    if (frame.empty())
+    {
+        timer.Stop();
+    }
+    
+    fillTexture(texture, frame);
+
+    SDL_RenderCopy(renderer, texture, NULL, NULL);
+    
     myRect->render();
     
     SDL_RenderPresent(renderer);
@@ -116,6 +155,7 @@ void wxSDLWindow::OnTimer(wxTimerEvent&) {
 
 void wxSDLWindow::Close()
 {
+    cap.release();
     if(window != NULL) {
         SDL_DestroyRenderer(renderer);
         SDL_DestroyWindow(window);

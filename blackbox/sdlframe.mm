@@ -9,17 +9,15 @@ SDL_Frame::SDL_Frame(const wxString& title) : wxFrame(NULL, wxID_ANY, title)
 {
     auto self_size = wxSize(800, 600);
     SetSize(self_size);
-    wxSplitterWindow *splitter = new wxSplitterWindow(this);
+    SetMaxSize(self_size);
+    SetMinSize(self_size);
     
-    sdl_window = new wxSDLWindow(splitter, wxSize(800, 600));
-    
-    wxPanel *panel = new wxPanel(splitter);
-    panel->Show();
-         
+
+    sdl_window = new wxSDLWindow(this, wxSize(800, 600));
+
     CreateStatusBar(1);
     SetStatusText(_T("Application Init"));
-
-    splitter->SplitHorizontally(sdl_window, panel, 600);
+    Centre();
 }
 
 void SDL_Frame::OnIdle(wxIdleEvent &)

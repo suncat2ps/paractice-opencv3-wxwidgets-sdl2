@@ -2,17 +2,12 @@
 #include "wx/splitter.h"
 #include "SDL2/SDL.h"
 #include "sdlwindow.hpp"
-#include "controlpanel.hpp"
-#include "imagepanel.hpp"
 
 class SDL_Frame : public wxFrame
 {
 public:
     wxSDLWindow *sdl_window = nullptr;
     SDL_Renderer *renderer = nullptr;
-    wxString *title;
-    wxImagePanel *drawPanel = nullptr;
-    wxControlPanel *ctrlPanel = nullptr;
     
     SDL_Frame(const wxString& title);
     void OnIdle(wxIdleEvent &);
