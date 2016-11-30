@@ -16,8 +16,6 @@ public:
     VideoCapture cap;
     Mat frame;
 
-
-
     wxSDLWindow(wxWindow* parent, wxSize const& size);
     void OnIdle(wxIdleEvent &);
     void CreateSurface();
@@ -26,6 +24,7 @@ public:
     void Lock();
     void Unlock();
     void Close();
+    
 private:
     wxTimer timer;
     SDL_Window* window = nullptr;

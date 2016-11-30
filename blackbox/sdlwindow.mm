@@ -119,29 +119,27 @@ void wxSDLWindow::OnTimer(wxTimerEvent&) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     
-    while (SDL_PollEvent(&event)) {
-        switch(event.type) {
-            case SDL_QUIT:
-                timer.Stop();
-                Close();
-                break;
-            case SDL_KEYDOWN:
-                wxPuts(_T("KEY DOWN"));
+//    while (SDL_PollEvent(&event)) {
+//        switch(event.type) {
+//            case SDL_QUIT:
+//                Close();
+//                break;
+//            case SDL_KEYDOWN:
+//                wxPuts(_T("KEY DOWN"));
+//                switch(event.key.keysym.sym) {
+//                    case SDLK_DOWN:
+//                        myRect->SetPositionY(myRect->r.y + 15);
+//                        break;
+//                }
+//                break;
+//        }
+//    }
 
-                switch(event.key.keysym.sym) {
-                    case SDLK_DOWN:
-                        myRect->SetPositionY(myRect->r.y + 15);
-                        break;
-                }
-                break;
-        }
-    }
-    
     cap >> frame;
     
     if (frame.empty())
     {
-        timer.Stop();
+        Close();
     }
     
     fillTexture(texture, frame);
@@ -155,6 +153,7 @@ void wxSDLWindow::OnTimer(wxTimerEvent&) {
 
 void wxSDLWindow::Close()
 {
+    timer.Stop();
     cap.release();
     if(window != NULL) {
         SDL_DestroyRenderer(renderer);
