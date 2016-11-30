@@ -27,6 +27,7 @@
 		83CCFD7B1DEBB8B8000F3454 /* appmenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD741DEBB8B8000F3454 /* appmenu.cpp */; };
 		83CCFD821DEBF67D000F3454 /* SObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD811DEBF67D000F3454 /* SObject.mm */; };
 		83CFF5101DEE5EF2000E00DA /* MyRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CFF50E1DEE5EF2000E00DA /* MyRect.cpp */; };
+		83CFF5371DEEB058000E00DA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 83CFF5361DEEB058000E00DA /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		83CCFD831DEBF6AC000F3454 /* ObjectiveCInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveCInterface.h; sourceTree = "<group>"; };
 		83CFF50E1DEE5EF2000E00DA /* MyRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyRect.cpp; sourceTree = "<group>"; };
 		83CFF50F1DEE5EF2000E00DA /* MyRect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MyRect.hpp; sourceTree = "<group>"; };
+		83CFF5361DEEB058000E00DA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				833A35DE1DE4636B00B9D4A6 /* wxrelease.xcconfig */,
 				833A35DF1DE4636B00B9D4A6 /* Info_cocoa.plist */,
 				833A35E71DE4637F00B9D4A6 /* blackbox.app */,
+				83CFF5361DEEB058000E00DA /* README.md */,
 				833A35E81DE4646700B9D4A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				83CCFD761DEBB8B8000F3454 /* sdlwindow.mm in Sources */,
 				83CCFD7A1DEBB8B8000F3454 /* imagepanel.cpp in Sources */,
 				83CCFD791DEBB8B8000F3454 /* controlpanel.cpp in Sources */,
+				83CFF5371DEEB058000E00DA /* README.md in Sources */,
 				83CCFD771DEBB8B8000F3454 /* sdlframe.mm in Sources */,
 				83CFF5101DEE5EF2000E00DA /* MyRect.cpp in Sources */,
 			);
