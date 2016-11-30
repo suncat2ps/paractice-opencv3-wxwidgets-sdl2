@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83250CCC1DE6E96A003FAAFB /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83250CCB1DE6E96A003FAAFB /* libSDL2.a */; };
+		8334FDBC1DE522E5002A6391 /* libwx_osx_cocoa_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8334FDBB1DE522E5002A6391 /* libwx_osx_cocoa_static.a */; };
+		8334FDBE1DE5240A002A6391 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8334FDBD1DE5240A002A6391 /* Images.xcassets */; };
+		8334FDC11DE5460E002A6391 /* libopencv_core.3.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8334FDBF1DE5460E002A6391 /* libopencv_core.3.1.0.dylib */; };
+		8334FDC21DE5460E002A6391 /* libopencv_highgui.3.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8334FDC01DE5460E002A6391 /* libopencv_highgui.3.1.0.dylib */; };
+		8334FDC41DE546EB002A6391 /* libopencv_imgproc.3.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8334FDC31DE546EB002A6391 /* libopencv_imgproc.3.1.0.dylib */; };
+		8334FDC61DE54804002A6391 /* libopencv_videoio.3.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8334FDC51DE54804002A6391 /* libopencv_videoio.3.1.0.dylib */; };
+		833A35E01DE4636B00B9D4A6 /* wxcocoa.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 833A35DC1DE4636B00B9D4A6 /* wxcocoa.xcconfig */; };
+		833A35E11DE4636B00B9D4A6 /* wxdebug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 833A35DD1DE4636B00B9D4A6 /* wxdebug.xcconfig */; };
+		833A35E21DE4636B00B9D4A6 /* wxrelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 833A35DE1DE4636B00B9D4A6 /* wxrelease.xcconfig */; };
+		833A35E31DE4636B00B9D4A6 /* Info_cocoa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833A35DF1DE4636B00B9D4A6 /* Info_cocoa.plist */; };
+		8354FAB71DE7C0D800B4B33C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8354FAB51DE7BF1000B4B33C /* AppKit.framework */; };
+		83CCFD761DEBB8B8000F3454 /* sdlwindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD6A1DEBB8B8000F3454 /* sdlwindow.mm */; };
+		83CCFD771DEBB8B8000F3454 /* sdlframe.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD6E1DEBB8B8000F3454 /* sdlframe.mm */; };
+		83CCFD781DEBB8B8000F3454 /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD6F1DEBB8B8000F3454 /* app.cpp */; };
+		83CCFD791DEBB8B8000F3454 /* controlpanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD701DEBB8B8000F3454 /* controlpanel.cpp */; };
+		83CCFD7A1DEBB8B8000F3454 /* imagepanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD731DEBB8B8000F3454 /* imagepanel.cpp */; };
+		83CCFD7B1DEBB8B8000F3454 /* appmenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD741DEBB8B8000F3454 /* appmenu.cpp */; };
+		83CCFD821DEBF67D000F3454 /* SObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD811DEBF67D000F3454 /* SObject.mm */; };
+		83CFF5101DEE5EF2000E00DA /* MyRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CFF50E1DEE5EF2000E00DA /* MyRect.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		83250CCB1DE6E96A003FAAFB /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = ../../../../usr/local/Cellar/sdl2/2.0.5/lib/libSDL2.a; sourceTree = "<group>"; };
+		8334FDBB1DE522E5002A6391 /* libwx_osx_cocoa_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwx_osx_cocoa_static.a; path = ../../wx_static/Products/usr/local/lib/libwx_osx_cocoa_static.a; sourceTree = "<group>"; };
+		8334FDBD1DE5240A002A6391 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8334FDBF1DE5460E002A6391 /* libopencv_core.3.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.1.0.dylib; path = "../../../../usr/local/Cellar/opencv3/HEAD-8151be9_4/lib/libopencv_core.3.1.0.dylib"; sourceTree = "<group>"; };
+		8334FDC01DE5460E002A6391 /* libopencv_highgui.3.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.3.1.0.dylib; path = "../../../../usr/local/Cellar/opencv3/HEAD-8151be9_4/lib/libopencv_highgui.3.1.0.dylib"; sourceTree = "<group>"; };
+		8334FDC31DE546EB002A6391 /* libopencv_imgproc.3.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.3.1.0.dylib; path = "../../../../usr/local/Cellar/opencv3/HEAD-8151be9_4/lib/libopencv_imgproc.3.1.0.dylib"; sourceTree = "<group>"; };
+		8334FDC51DE54804002A6391 /* libopencv_videoio.3.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videoio.3.1.0.dylib; path = "../../../../usr/local/Cellar/opencv3/HEAD-8151be9_4/lib/libopencv_videoio.3.1.0.dylib"; sourceTree = "<group>"; };
+		833A35DC1DE4636B00B9D4A6 /* wxcocoa.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = wxcocoa.xcconfig; sourceTree = "<group>"; };
+		833A35DD1DE4636B00B9D4A6 /* wxdebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = wxdebug.xcconfig; sourceTree = "<group>"; };
+		833A35DE1DE4636B00B9D4A6 /* wxrelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = wxrelease.xcconfig; sourceTree = "<group>"; };
+		833A35DF1DE4636B00B9D4A6 /* Info_cocoa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info_cocoa.plist; sourceTree = "<group>"; };
+		833A35E71DE4637F00B9D4A6 /* blackbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8354FAB51DE7BF1000B4B33C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		83CCFD6A1DEBB8B8000F3454 /* sdlwindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sdlwindow.mm; sourceTree = "<group>"; };
+		83CCFD6B1DEBB8B8000F3454 /* sdlwindow.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sdlwindow.hpp; sourceTree = "<group>"; };
+		83CCFD6C1DEBB8B8000F3454 /* app.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = app.hpp; sourceTree = "<group>"; };
+		83CCFD6D1DEBB8B8000F3454 /* sdlframe.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sdlframe.hpp; sourceTree = "<group>"; };
+		83CCFD6E1DEBB8B8000F3454 /* sdlframe.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sdlframe.mm; sourceTree = "<group>"; };
+		83CCFD6F1DEBB8B8000F3454 /* app.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
+		83CCFD701DEBB8B8000F3454 /* controlpanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = controlpanel.cpp; sourceTree = "<group>"; };
+		83CCFD711DEBB8B8000F3454 /* controlpanel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = controlpanel.hpp; sourceTree = "<group>"; };
+		83CCFD721DEBB8B8000F3454 /* imagepanel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = imagepanel.hpp; sourceTree = "<group>"; };
+		83CCFD731DEBB8B8000F3454 /* imagepanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imagepanel.cpp; sourceTree = "<group>"; };
+		83CCFD741DEBB8B8000F3454 /* appmenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = appmenu.cpp; sourceTree = "<group>"; };
+		83CCFD751DEBB8B8000F3454 /* appmenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = appmenu.hpp; sourceTree = "<group>"; };
+		83CCFD801DEBF67D000F3454 /* SObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SObject.h; sourceTree = "<group>"; };
+		83CCFD811DEBF67D000F3454 /* SObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SObject.mm; sourceTree = "<group>"; };
+		83CCFD831DEBF6AC000F3454 /* ObjectiveCInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveCInterface.h; sourceTree = "<group>"; };
+		83CFF50E1DEE5EF2000E00DA /* MyRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyRect.cpp; sourceTree = "<group>"; };
+		83CFF50F1DEE5EF2000E00DA /* MyRect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MyRect.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		833A35C51DE4633200B9D4A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8354FAB71DE7C0D800B4B33C /* AppKit.framework in Frameworks */,
+				83250CCC1DE6E96A003FAAFB /* libSDL2.a in Frameworks */,
+				8334FDC11DE5460E002A6391 /* libopencv_core.3.1.0.dylib in Frameworks */,
+				8334FDC61DE54804002A6391 /* libopencv_videoio.3.1.0.dylib in Frameworks */,
+				8334FDC21DE5460E002A6391 /* libopencv_highgui.3.1.0.dylib in Frameworks */,
+				8334FDBC1DE522E5002A6391 /* libwx_osx_cocoa_static.a in Frameworks */,
+				8334FDC41DE546EB002A6391 /* libopencv_imgproc.3.1.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8334FDB61DE5210C002A6391 /* blackbox */ = {
+			isa = PBXGroup;
+			children = (
+				83CCFD6C1DEBB8B8000F3454 /* app.hpp */,
+				83CCFD6F1DEBB8B8000F3454 /* app.cpp */,
+				83CCFD6A1DEBB8B8000F3454 /* sdlwindow.mm */,
+				83CCFD6B1DEBB8B8000F3454 /* sdlwindow.hpp */,
+				83CCFD6D1DEBB8B8000F3454 /* sdlframe.hpp */,
+				83CCFD6E1DEBB8B8000F3454 /* sdlframe.mm */,
+				83CCFD701DEBB8B8000F3454 /* controlpanel.cpp */,
+				83CCFD711DEBB8B8000F3454 /* controlpanel.hpp */,
+				83CCFD721DEBB8B8000F3454 /* imagepanel.hpp */,
+				83CCFD731DEBB8B8000F3454 /* imagepanel.cpp */,
+				83CCFD741DEBB8B8000F3454 /* appmenu.cpp */,
+				83CCFD751DEBB8B8000F3454 /* appmenu.hpp */,
+				8334FDBD1DE5240A002A6391 /* Images.xcassets */,
+				83CCFD801DEBF67D000F3454 /* SObject.h */,
+				83CCFD811DEBF67D000F3454 /* SObject.mm */,
+				83CCFD831DEBF6AC000F3454 /* ObjectiveCInterface.h */,
+				83CFF50E1DEE5EF2000E00DA /* MyRect.cpp */,
+				83CFF50F1DEE5EF2000E00DA /* MyRect.hpp */,
+			);
+			path = blackbox;
+			sourceTree = "<group>";
+		};
+		833A35BF1DE4633200B9D4A6 = {
+			isa = PBXGroup;
+			children = (
+				8334FDB61DE5210C002A6391 /* blackbox */,
+				833A35DC1DE4636B00B9D4A6 /* wxcocoa.xcconfig */,
+				833A35DD1DE4636B00B9D4A6 /* wxdebug.xcconfig */,
+				833A35DE1DE4636B00B9D4A6 /* wxrelease.xcconfig */,
+				833A35DF1DE4636B00B9D4A6 /* Info_cocoa.plist */,
+				833A35E71DE4637F00B9D4A6 /* blackbox.app */,
+				833A35E81DE4646700B9D4A6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		833A35E81DE4646700B9D4A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8354FAB51DE7BF1000B4B33C /* AppKit.framework */,
+				83250CCB1DE6E96A003FAAFB /* libSDL2.a */,
+				8334FDC51DE54804002A6391 /* libopencv_videoio.3.1.0.dylib */,
+				8334FDC31DE546EB002A6391 /* libopencv_imgproc.3.1.0.dylib */,
+				8334FDBF1DE5460E002A6391 /* libopencv_core.3.1.0.dylib */,
+				8334FDC01DE5460E002A6391 /* libopencv_highgui.3.1.0.dylib */,
+				8334FDBB1DE522E5002A6391 /* libwx_osx_cocoa_static.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		833A35C71DE4633200B9D4A6 /* blackbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 833A35D91DE4633200B9D4A6 /* Build configuration list for PBXNativeTarget "blackbox" */;
+			buildPhases = (
+				833A35C41DE4633200B9D4A6 /* Sources */,
+				833A35C51DE4633200B9D4A6 /* Frameworks */,
+				833A35C61DE4633200B9D4A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = blackbox;
+			productName = blackbox;
+			productReference = 833A35E71DE4637F00B9D4A6 /* blackbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		833A35C01DE4633200B9D4A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "장성각";
+				TargetAttributes = {
+					833A35C71DE4633200B9D4A6 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 833A35C31DE4633200B9D4A6 /* Build configuration list for PBXProject "blackbox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 833A35BF1DE4633200B9D4A6;
+			productRefGroup = 833A35BF1DE4633200B9D4A6;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				833A35C71DE4633200B9D4A6 /* blackbox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		833A35C61DE4633200B9D4A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833A35E01DE4636B00B9D4A6 /* wxcocoa.xcconfig in Resources */,
+				833A35E11DE4636B00B9D4A6 /* wxdebug.xcconfig in Resources */,
+				8334FDBE1DE5240A002A6391 /* Images.xcassets in Resources */,
+				833A35E31DE4636B00B9D4A6 /* Info_cocoa.plist in Resources */,
+				833A35E21DE4636B00B9D4A6 /* wxrelease.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		833A35C41DE4633200B9D4A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CCFD7B1DEBB8B8000F3454 /* appmenu.cpp in Sources */,
+				83CCFD821DEBF67D000F3454 /* SObject.mm in Sources */,
+				83CCFD781DEBB8B8000F3454 /* app.cpp in Sources */,
+				83CCFD761DEBB8B8000F3454 /* sdlwindow.mm in Sources */,
+				83CCFD7A1DEBB8B8000F3454 /* imagepanel.cpp in Sources */,
+				83CCFD791DEBB8B8000F3454 /* controlpanel.cpp in Sources */,
+				83CCFD771DEBB8B8000F3454 /* sdlframe.mm in Sources */,
+				83CFF5101DEE5EF2000E00DA /* MyRect.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		833A35D71DE4633200B9D4A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 833A35DD1DE4636B00B9D4A6 /* wxdebug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(WXROOT)/include/wx/wxprec.h";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(WX_PREPROCESSOR_DEFINITIONS)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				WXPLATFORM = "__WXOSX_$(WXTOOLKITUPPER)__";
+				WXROOT = "/Users/suncat/Downloads/wxWidgets-3.1.0";
+				WX_PREPROCESSOR_DEFINITIONS = "WXBUILDING $(WXPLATFORM) __WX__ _FILE_OFFSET_BITS=64 _LARGE_FILES MACOS_CLASSIC __WXMAC_XCODE__=1 SCI_LEXER WX_PRECOMP=1 wxUSE_UNICODE_UTF8=0 wxUSE_UNICODE_WCHAR=1";
+			};
+			name = Debug;
+		};
+		833A35D81DE4633200B9D4A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 833A35DE1DE4636B00B9D4A6 /* wxrelease.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(WXROOT)/include/wx/wxprec.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(WX_PREPROCESSOR_DEFINITIONS)";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				WXPLATFORM = "__WXOSX_$(WXTOOLKITUPPER)__";
+				WXROOT = "/Users/suncat/Downloads/wxWidgets-3.1.0";
+				WX_PREPROCESSOR_DEFINITIONS = "WXBUILDING $(WXPLATFORM) __WX__ _FILE_OFFSET_BITS=64 _LARGE_FILES MACOS_CLASSIC __WXMAC_XCODE__=1 SCI_LEXER WX_PRECOMP=1 wxUSE_UNICODE_UTF8=0 wxUSE_UNICODE_WCHAR=1";
+			};
+			name = Release;
+		};
+		833A35DA1DE4633200B9D4A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 833A35DC1DE4636B00B9D4A6 /* wxcocoa.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				INFOPLIST_FILE = "$(SRCROOT)/Info_cocoa.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/usr/local/opt/opencv3/lib,
+					"/usr/local/Cellar/opencv3/HEAD-8151be9_4/lib",
+					/usr/local/lib,
+					/usr/local/Cellar/sdl2/2.0.5/lib,
+				);
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-lz",
+					"-framework",
+					WebKit,
+					"-framework",
+					IOKit,
+					"-framework",
+					Carbon,
+					"-framework",
+					Cocoa,
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					OpenGL,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreMedia,
+					"-framework",
+					CoreVideo,
+					"-framework",
+					AVKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.meterm.blackbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(WXROOT)/build/osx/setup/cocoa/include $(WXROOT)/include /usr/local/opt/opencv3/include /usr/local/include";
+				WXROOT = "/Users/suncat/Downloads/wxWidgets-3.1.0";
+			};
+			name = Debug;
+		};
+		833A35DB1DE4633200B9D4A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 833A35DC1DE4636B00B9D4A6 /* wxcocoa.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				INFOPLIST_FILE = "$(SRCROOT)/Info_cocoa.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/usr/local/opt/opencv3/lib,
+					"/usr/local/Cellar/opencv3/HEAD-8151be9_4/lib",
+					/usr/local/lib,
+					/usr/local/Cellar/sdl2/2.0.5/lib,
+				);
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-lz",
+					"-framework",
+					WebKit,
+					"-framework",
+					IOKit,
+					"-framework",
+					Carbon,
+					"-framework",
+					Cocoa,
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					OpenGL,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreMedia,
+					"-framework",
+					CoreVideo,
+					"-framework",
+					AVKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.meterm.blackbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(WXROOT)/build/osx/setup/cocoa/include $(WXROOT)/include /usr/local/opt/opencv3/include /usr/local/include";
+				WXROOT = "/Users/suncat/Downloads/wxWidgets-3.1.0";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		833A35C31DE4633200B9D4A6 /* Build configuration list for PBXProject "blackbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833A35D71DE4633200B9D4A6 /* Debug */,
+				833A35D81DE4633200B9D4A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		833A35D91DE4633200B9D4A6 /* Build configuration list for PBXNativeTarget "blackbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833A35DA1DE4633200B9D4A6 /* Debug */,
+				833A35DB1DE4633200B9D4A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 833A35C01DE4633200B9D4A6 /* Project object */;
+}
