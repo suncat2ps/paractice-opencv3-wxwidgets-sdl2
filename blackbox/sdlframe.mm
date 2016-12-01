@@ -7,14 +7,20 @@ END_EVENT_TABLE()
 
 SDL_Frame::SDL_Frame(const wxString& title) : wxFrame(NULL, wxID_ANY, title)
 {
-    auto self_size = wxSize(800, 600);
+    auto splitter = new wxSplitterWindow(this);
+    wxSize self_size = wxSize(800, 600);
     SetSize(self_size);
-    SetMaxSize(self_size);
+    //SetMaxSize(self_size);
     SetMinSize(self_size);
     
 
-    sdl_window = new wxSDLWindow(this, wxSize(800, 600));
+    sdl_window = new wxSDLWindow(splitter, wxSize(800, 600));
 
+    auto panel = new wxPanel(splitter);
+    panel->Show();
+    
+    splitter->SplitHorizontally(sdl_window, panel, 480);
+    
     CreateStatusBar(1);
     SetStatusText(_T("Application Init"));
     Centre();

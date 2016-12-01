@@ -23,7 +23,6 @@
 		83CCFD771DEBB8B8000F3454 /* sdlframe.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD6E1DEBB8B8000F3454 /* sdlframe.mm */; };
 		83CCFD781DEBB8B8000F3454 /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD6F1DEBB8B8000F3454 /* app.cpp */; };
 		83CCFD791DEBB8B8000F3454 /* controlpanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD701DEBB8B8000F3454 /* controlpanel.cpp */; };
-		83CCFD7A1DEBB8B8000F3454 /* imagepanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD731DEBB8B8000F3454 /* imagepanel.cpp */; };
 		83CCFD7B1DEBB8B8000F3454 /* appmenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD741DEBB8B8000F3454 /* appmenu.cpp */; };
 		83CCFD821DEBF67D000F3454 /* SObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83CCFD811DEBF67D000F3454 /* SObject.mm */; };
 		83CFF5101DEE5EF2000E00DA /* MyRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83CFF50E1DEE5EF2000E00DA /* MyRect.cpp */; };
@@ -52,8 +51,6 @@
 		83CCFD6F1DEBB8B8000F3454 /* app.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
 		83CCFD701DEBB8B8000F3454 /* controlpanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = controlpanel.cpp; sourceTree = "<group>"; };
 		83CCFD711DEBB8B8000F3454 /* controlpanel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = controlpanel.hpp; sourceTree = "<group>"; };
-		83CCFD721DEBB8B8000F3454 /* imagepanel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = imagepanel.hpp; sourceTree = "<group>"; };
-		83CCFD731DEBB8B8000F3454 /* imagepanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imagepanel.cpp; sourceTree = "<group>"; };
 		83CCFD741DEBB8B8000F3454 /* appmenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = appmenu.cpp; sourceTree = "<group>"; };
 		83CCFD751DEBB8B8000F3454 /* appmenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = appmenu.hpp; sourceTree = "<group>"; };
 		83CCFD801DEBF67D000F3454 /* SObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SObject.h; sourceTree = "<group>"; };
@@ -93,8 +90,6 @@
 				83CCFD6E1DEBB8B8000F3454 /* sdlframe.mm */,
 				83CCFD701DEBB8B8000F3454 /* controlpanel.cpp */,
 				83CCFD711DEBB8B8000F3454 /* controlpanel.hpp */,
-				83CCFD721DEBB8B8000F3454 /* imagepanel.hpp */,
-				83CCFD731DEBB8B8000F3454 /* imagepanel.cpp */,
 				83CCFD741DEBB8B8000F3454 /* appmenu.cpp */,
 				83CCFD751DEBB8B8000F3454 /* appmenu.hpp */,
 				8334FDBD1DE5240A002A6391 /* Images.xcassets */,
@@ -212,7 +207,6 @@
 				83CCFD821DEBF67D000F3454 /* SObject.mm in Sources */,
 				83CCFD781DEBB8B8000F3454 /* app.cpp in Sources */,
 				83CCFD761DEBB8B8000F3454 /* sdlwindow.mm in Sources */,
-				83CCFD7A1DEBB8B8000F3454 /* imagepanel.cpp in Sources */,
 				83CCFD791DEBB8B8000F3454 /* controlpanel.cpp in Sources */,
 				83CFF5371DEEB058000E00DA /* README.md in Sources */,
 				83CCFD771DEBB8B8000F3454 /* sdlframe.mm in Sources */,

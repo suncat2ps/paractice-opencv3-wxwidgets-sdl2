@@ -31,14 +31,15 @@ wxSDLWindow::wxSDLWindow(wxWindow* parent, wxSize const& size)
         std::cerr << "***Could not initialize capturing...***" << std::endl;
         return;
     }
-
-
+    
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL Initialisation Error\n\n";
         return;
     }
     
-    window = SDL_CreateWindowFrom((__bridge void *)GetNSWindowFromNSView((NSView *)GetHandle()));
+    NSWindow *nswindow = GetNSWindowFromNSView((NSView *)GetHandle());
+    window = SDL_CreateWindowFrom((__bridge void *)nswindow);
+    
     
     wxPuts(_T("Start"));
     
@@ -65,7 +66,7 @@ void wxSDLWindow::OnIdle(wxIdleEvent &) {
     SDL_RenderReadPixels(renderer, NULL, SDL_PIXELFORMAT_RGB24, surface->pixels, surface->pitch);
     Unlock();
     Refresh(false);
-    wxMilliSleep(33);
+    wxMilliSleep(10);
 }
 
 void wxSDLWindow::CreateSurface() {
@@ -109,8 +110,10 @@ void wxSDLWindow::OnPaint(wxPaintEvent& event)
         return;
     }
     Lock();
+    
     wxBitmap bmp(wxImage(surface->w, surface->h,
-                        static_cast<unsigned char *>(surface->pixels), true));
+                         (unsigned char *)surface->pixels, true));
+
     Unlock();
     wxBufferedPaintDC dc(this, bmp);
 }

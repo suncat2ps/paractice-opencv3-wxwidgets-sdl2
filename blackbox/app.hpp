@@ -5,12 +5,10 @@
 #include "controlpanel.hpp"
 #include "sdlframe.hpp"
 #include "ObjectiveCInterface.h"
-#include "imagepanel.hpp"
 
 class MyApp : public wxApp
 {
     wxFrame *frame;
-    wxImagePanel * drawPane;
     wxControlPanel * ctrlPane;
     wxMenuBar *menuBar;
 

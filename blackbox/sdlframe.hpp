@@ -1,6 +1,7 @@
 #include "wx/wx.h"
 #include "wx/splitter.h"
 #include "SDL2/SDL.h"
+#include "SDL2/SDL_syswm.h"
 #include "sdlwindow.hpp"
 
 class SDL_Frame : public wxFrame

@@ -10,20 +10,7 @@ bool MyApp::OnInit()
     wxInitAllImageHandlers();
     
     menuBar = new AppMenuBar();
-//   
-//    wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
-//    frame = new wxFrame(NULL, wxID_ANY, wxT("wxBitmap"), wxPoint(50, 50), wxSize(640, 600));
-//    
-//    drawPane = new wxImagePanel(frame);
-//    sizer->Add(drawPane, 8, wxEXPAND);
-//
-//    ctrlPane = new wxControlPanel(frame);
-//    sizer->Add(ctrlPane, 2, wxEXPAND);
-//    
-//    frame->SetSizer(sizer);
-//    frame->SetMenuBar(menuBar);
-//    frame->Show();
-//    
+
     SDL_Frame *sdl_frame = new SDL_Frame("SDL Frame INIT");
     sdl_frame->SetMenuBar(menuBar);
     sdl_frame->Show();
